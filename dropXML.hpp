@@ -233,7 +233,7 @@ inline bool parse(Consumer &consumer, const char *xmlStart, const char *xmlEnd) 
     const char *cur = xmlStart, *end = xmlEnd;
     int depth = 0;
     // BOM
-    if (cur+3 <= end && cur[0] == char(0xef) && cur[1] == char(0xbb) && cur[2] == char(0xbf))
+    if (cur+3 <= end && cur[0] == '\xef' && cur[1] == '\xbb' && cur[2] == '\xbf')
         cur += 3;
     for (skipWhitespaceAndComments(cur, end); cur < end; skipWhitespaceAndComments(cur, end)) {
         if (*cur == '<') {
